@@ -1,8 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
 
+ picture, video, iframe, figure {
+     max-width: 100%;
+     width: 100%;
+     object-fit: cover;
+     object-position: center;
+    }
 
+html {
+    scroll-behavior: smooth;
+    }
+ body {
+    line-height: 1.4em;
+ }   
 
 #color {
-    background-color:rgb(242, 138, 11) ;
     margin-top: 7 px;
    
+}
+
+#bo {
+    background-color: #038C73;
+    border: none; 
+    padding: 7px 5px 7px 5px;   
 }

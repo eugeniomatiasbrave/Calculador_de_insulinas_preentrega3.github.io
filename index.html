@@ -10,83 +10,102 @@
   </head>
   <body>
     
-        <div class="container-fluid m-0" style="background-color: white; height: 110px;">
-          
+        <div class="container-fluid m-0" style="background-color: white; height: 110px;"> <!--seccion superior-->
             <img src="/IMG/logo.png" alt="logo" width="100" height="100">
-          
         </div>
      
     
-    <div class="container-xl-0 m-0" style="background-color: rgb(188, 180, 180); height: 500 px;">
-      <div class="row ">
-        
-           <nav class="col-sm-12 col-md-2 col-xl-2 col-xxl-2 text-bg-dark pt-4" >
-            <ul class="nav flex-column ">
+    <div class="container-xl-0 m-0" style="background-color: rgb(188, 180, 180); height: 500 px;"> <!-- inicio contenedor principal-->
+      <div class="row "> <!--fila principal-->
+           <nav class="col-sm-12 col-md-2 col-xl-2 col-xxl-2 text pt-4 m-0" style="background-color: #038C73"> <!--inicio nav columna 1-->
+            <ul class="nav flex-column fw-bolder lh-sm">
               <li class="nav-item ">
-                <a class="nav-link text-reset" aria-current="page" href="#">Calculador de Insulinas</a>
+                <a class="nav-link text-reset"  href="#">CALCULADOR DE INSULINAS</a>
               </li>
+              <hr class="linea" id="d2">
               <li class="nav-item">
-                <a class="nav-link text-reset" href="#">Monodrogas</a>
+                <a class="nav-link text-reset " href="#">VADEMECUM DE INSULINAS</a>
               </li>
+              <hr class="linea" id="d2">
               <li class="nav-item">
-                <a class="nav-link text-reset" href="#">Alta de afiliados</a>
+                <a class="nav-link text-reset" href="#">ALTA DE AFILIADOS</a>
               </li>
+              <hr class="linea" id="d2">
               <li class="nav-item">
-                <a class="nav-link text-reset" href="#">Registro</a>
-              </li>    
+                <a class="nav-link text-reset" href="#">AFILIADOS REGISTRADOS</a>
+              </li>   
+              <hr class="linea" id="d2"> 
             </ul>
-           </nav>
+           </nav> <!----------fin nav-------->
         
-        <div class="col-sm-12 col-md-10 col-xl-10 col-xxl-10 ps-xxl-5" style="background-color: rgb(206, 221, 243);">
-          <section class="mt-3 w-75 ps-6" >    
-             <div>
-              <h2 class="mb-3">Calculador de cajas de insulinas para departamento de Auditoria.</h2>
-              <h6>El Calculador indica la cantidad de cajas de INSULINAS en presentaciones de 100 UI/ml y 300 UI/ml.</h6>
-              <h6>El numero de cajas se dispensan en enteros ya que las cajas no son divisibles. Ej: si corrresponden 1.3 cajas al mes, se entregan 2 cajas</h6>
-             </div>
-          </Section>
-        
-      <section class="m-xxl-5 px-xxl-5 w-50">
-        <div class="">
-          <label for="staticEmail2" class="visually-hidden "></label>
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="PRESENTACION">
-        </div>
-        <div>
-          <label for="inputPassword2" class="visually-hidden ">Password</label>
-          <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar presentacion de 100 ml, 300 ml, 200 H o 200 T">
-        </div>
-        <div>
-          <label for="staticEmail2" class="visually-hidden"></label>
-          <input type="text" readonly class="form-control-plaintext " id="staticEmail2" value="UNIDADES DIA">
-        </div>
-        <div>
-          <label for="inputPassword2" class="visually-hidden">Password</label>
-          <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar las UI dia"> 
-        </div>
-        <div>
-            <label for="staticEmail2" class="visually-hidden"></label>
-            <input type="text" readonly class="form-control-plaintext " id="staticEmail2" value="DISPENSA">
-          </div>
-          <div >
-            <label for="inputPassword2" class="visually-hidden">Password</label>
-            <input type="password" class="form-control " id="inputPassword2" placeholder="Ingresar 30 o 90 dias">
-          </div>
-          <div class="mt-3 " >
-            <button type="submit" class="btn w-100" id="color" >CALCULAR</button>
-          </div>
-          <div>
-            <label for="staticEmail2" class="visually-hidden"></label>
-            <input type="text" readonly class="form-control-plaintext " id="staticEmail2" value="RESULTADO CAJAS:">
-          </div>
-          <div>
-            <label for="inputPassword2" class="visually-hidden">Password</label>
-            <input type="password" class="form-control " id="inputPassword2" placeholder="...">
-          </div>
-      </Section>
-    </div>
-  </section>
+        <div class="col-sm-12 col-md-10 col-xl-10 col-xxl-10 ps-xxl-5" style="background-color: rgb(230, 229, 226);"> <!--seccion derecha , columna columna 2)-->
 
-    <Script src="JS/simulador.js"> </Script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <section class="container-fluid text-center pt-lg-5" id=""> <!-----------seccion 1 calculador -->
+            <h2 class="mb-5">CALCULADOR DE INSULINAS</h2>
+            <div class="alert alert-success" role="alert">
+              <p>El Calculador indica la cantidad de cajas de INSULINAS en presentaciones de 100 UI/ml, 200 y 300 UI/ml.</p>
+              <p class="mb-0">El numero de cajas se dispensan en enteros ya que las cajas no son divisibles. Ej: si corrresponden 1.3 cajas al mes, se entregan 2 cajas</p>
+            </div>
+        </section>
+
+        <section class="container-fluid text-center pt-lg-4 w-50" id=""> <!-------Formulario calculador------------->
+          <h6 class="text-center ">INGRESAR LOS DATOS Y OBTENGA LAS CAJAS A ENTREGAR POR DISPENSA</h56>
+            <div class="p-1 mt-lg-2">
+             <label for="inputPassword2" class="visually-hidden ">Password</label>
+             <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar opcion de presentacion de Insulina">
+           </div>
+           <div class="p-1">
+            <label for="inputPassword2" class="visually-hidden">Password</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar las UI dia"> 
+           </div>
+          <div class="p-1">
+            <label for="inputPassword2" class="visually-hidden">Password</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar 30 o 90 dias">
+          </div>
+          <div class="p-1">
+            <button type="submit" class="btn btn-primary w-100" id="bo" >CALCULAR</button>
+          </div>
+          <div class="p-1">
+            <label for="inputPassword2" class="visually-hidden">Password</label>
+            <input type="password" class="form-control " id="inputPassword2" placeholder="Resultado">
+          </div>
+      </Section> <!--fin de formulario calculador-->
+
+      <hr class="linea mt-lg-5" id="d2">
+
+   <section class="container-fluid text-center pt-lg-5" id="">  <!--seccion vademecum objetos-->
+     <h2 >VADEMECUM DE INSULINAS</h2> 
+   </section>  
+   <div class="mt-5"> <!----------lista insulinas-------->
+    <p class="fs-5 text-center mt-2">LISTA DE MARCAS DE INSULINAS MAS USADAS</p>
+    <ul id="domMarcas" class="text-center list-unstyled"></ul>
+   </div>
+   
+   <seccion class="container text-center"> <!----------objetos de vademecum-------->
+    <p class="fs-5">CARACTERISTICAS E INFORMACION</p>
+    <div id="domVademecum" class="d-flex flex-wrap"></div>
+   </seccion>
+
+   <hr class="linea mt-lg-4" id="d2">
+
+   <seccion class="container">  <!----------formulario Altas de afiliados-------->
+    <div id="contenedoraltas"></div>
+   </seccion>
+
+   <hr class="linea mt-lg-4" id="d2">
+
+   <seccion class="container"> <!----------buscador registro de afiliados-------->
+     <div class="container-fluid text-center pt-lg-3" id=""> 
+       <h2 class="mb-2">PACIENTES REGISTRADOS</h2>
+     </div>
+     <div id="contenedorRegistro"></div>
+   </seccion>
+  
+  </div> <!----fin de seccion derecha-->
+</div> <!---- fin de contenedor principal-->
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <Script src="JS/simulador.js"> </Script>
   </body>
 </html>
