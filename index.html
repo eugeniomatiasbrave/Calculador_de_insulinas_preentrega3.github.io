@@ -20,19 +20,19 @@
            <nav class="col-sm-12 col-md-2 col-xl-2 col-xxl-2 text pt-4 m-0" style="background-color: #038C73"> <!--inicio nav columna 1-->
             <ul class="nav flex-column fw-bolder lh-sm">
               <li class="nav-item ">
-                <a class="nav-link text-reset"  href="#">CALCULADOR DE INSULINAS</a>
+                <a class="nav-link text-reset"  href="#ir-1">CALCULADOR DE INSULINAS</a>
               </li>
               <hr class="linea" id="d2">
               <li class="nav-item">
-                <a class="nav-link text-reset " href="#">VADEMECUM DE INSULINAS</a>
+                <a class="nav-link text-reset " href="#ir-2">VADEMECUM DE INSULINAS</a>
               </li>
               <hr class="linea" id="d2">
               <li class="nav-item">
-                <a class="nav-link text-reset" href="#">ALTA DE AFILIADOS</a>
+                <a class="nav-link text-reset" href="#ir-3">ALTA DE AFILIADOS</a>
               </li>
               <hr class="linea" id="d2">
               <li class="nav-item">
-                <a class="nav-link text-reset" href="#">AFILIADOS REGISTRADOS</a>
+                <a class="nav-link text-reset" href="#ir-4">AFILIADOS REGISTRADOS</a>
               </li>   
               <hr class="linea" id="d2"> 
             </ul>
@@ -40,40 +40,63 @@
         
         <div class="col-sm-12 col-md-10 col-xl-10 col-xxl-10 ps-xxl-5" style="background-color: rgb(230, 229, 226);"> <!--seccion derecha , columna columna 2)-->
 
-        <section class="container-fluid text-center pt-lg-5" id=""> <!-----------seccion 1 calculador -->
-            <h2 class="mb-5">CALCULADOR DE INSULINAS</h2>
-            <div class="alert alert-success" role="alert">
-              <p>El Calculador indica la cantidad de cajas de INSULINAS en presentaciones de 100 UI/ml, 200 y 300 UI/ml.</p>
-              <p class="mb-0">El numero de cajas se dispensan en enteros ya que las cajas no son divisibles. Ej: si corrresponden 1.3 cajas al mes, se entregan 2 cajas</p>
-            </div>
+        <section class="container-fluid text-center pt-lg-5" id="ir-1"> <!-----------seccion 1 calculador -->
+            <h3 class="mb-5">CALCULADOR DE INSULINAS PARA DROGUERIA DURAX S.A.</h3>
+            <p>El Calculador de Insulinas permite:</p>
+            <lu class="">
+              <li>Realizar el calculo aguil para departamento de auditoria </li>
+              <li>Obtener la cantidad de cajas a dispensar por los operadores ante la falla del sisitema. </li>
+            </lu>
+            <p>Datos a tener encuenta par alos operadores: El numero de cajas se dispensan en enteros ya que las cajas no son divisibles. Ej: si corrresponden 1.3 cajas al mes, se entregan 2 cajas</p>
+            
         </section>
 
-        <section class="container-fluid text-center pt-lg-4 w-50" id=""> <!-------Formulario calculador------------->
-          <h6 class="text-center ">INGRESAR LOS DATOS Y OBTENGA LAS CAJAS A ENTREGAR POR DISPENSA</h56>
-            <div class="p-1 mt-lg-2">
-             <label for="inputPassword2" class="visually-hidden ">Password</label>
-             <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar opcion de presentacion de Insulina">
-           </div>
-           <div class="p-1">
-            <label for="inputPassword2" class="visually-hidden">Password</label>
-            <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar las UI dia"> 
-           </div>
-          <div class="p-1">
-            <label for="inputPassword2" class="visually-hidden">Password</label>
-            <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar 30 o 90 dias">
+        
+
+        <form  id="calculador" class=" card border-dark bg-light container-fluid text-center pt-lg-3 w-50" > <!-------Formulario calculador------------->
+          <h5 class="text-center" id="">CALCULADOR DE CAJAS A DISPENSAR</h5>
+
+          <input type="number" id="inputUnidades" class="form-control p-1 mt-1"  placeholder="Ingresar las UI dia que se aplica el paciente" required> 
+
+          <select id="inputInsulinas" class="form-select p-1 mt-1"  aria-label="Default select example">
+            <option selected>Seleccionar Insulina</option>
+            <option value="1500">INSULINA INSULATARD FLEXPEN 100 ui/ml</option>
+            <option value="1500">INSULINA NOVORAPID FLEXPEN 100 ui/ml</option>
+            <option value="1500">INSULINA APIDRA SOLOSTAR 100 ui/ml</option>
+            <option value="1500">INSULINA LANTUS SOLOSTAR 100 ui/ml</option>
+            <option value="1350">INSULINA TOUJEO 300 ui/ml</option>
+            <option value="1500">INSULINA LEVEMIR FLEXPEN ui/ml</option>
+            <option value="1500">INSULINA HUMALOG KWIKPEN 100 ui/ml</option>
+            <option value="3000">INSULINA HUMALOG KWIKPEN 200 ui/ml</option>
+            <option value="1500">INSULINA TRESIBA FLEXTOUCH 100 ui/ml</option>
+            <option value="1800">INSULINA TRESIBA FLEXTOUCH 200 ui/ml</option>
+            <option value="1500">INSULINA HUMALOG MIX 25 KWIKPEN 100 ui/ml</option>
+            <option value="1500">INSULINA INSULATARD PENFILL 100 ui/ml</option>
+          </select>
+
+          <select id="inputDispensa" class="form-select p-1 mt-1"  aria-label="Default select example" required >
+            <option selected>Ingresar el tipo de entrega:</option>
+            <option value="30">A 30 dias</option>
+            <option value="90">A 90 dias</option>
+          </select>
+          
+          
+          <button type="submit" class="btn btn-primary w-100 p-2 my-2" value="" id="bo">CALCULAR</button>
+
+          <div class="card border-dark mb-3" style="max-width: 40rem;">
+            <div class="card-header" id="resultado"></div>
+            <div class="card-body text-dark">
+              <h5 class="card-title m-0"></h5>
+              <p id="resultado-redondo" class="num-res" class="card-text m-0 p-0"></p>
+            </div>
           </div>
-          <div class="p-1">
-            <button type="submit" class="btn btn-primary w-100" id="bo" >CALCULAR</button>
-          </div>
-          <div class="p-1">
-            <label for="inputPassword2" class="visually-hidden">Password</label>
-            <input type="password" class="form-control " id="inputPassword2" placeholder="Resultado">
-          </div>
-      </Section> <!--fin de formulario calculador-->
+
+        </form> <!--fin de formulario calculador-->
+
 
       <hr class="linea mt-lg-5" id="d2">
 
-   <section class="container-fluid text-center pt-lg-5" id="">  <!--seccion vademecum objetos-->
+   <section class="container-fluid text-center pt-lg-5" id="ir-2">  <!--seccion vademecum objetos-->
      <h2 >VADEMECUM DE INSULINAS</h2> 
    </section>  
    <div class="mt-5"> <!----------lista insulinas-------->
@@ -88,14 +111,14 @@
 
    <hr class="linea mt-lg-4" id="d2">
 
-   <seccion class="container">  <!----------formulario Altas de afiliados-------->
-    <div id="contenedoraltas"></div>
+   <seccion class="container" id="ir-3">  <!----------formulario Altas de afiliados-------->
+    <div id="formularioaltas" ></div>
    </seccion>
 
    <hr class="linea mt-lg-4" id="d2">
 
-   <seccion class="container"> <!----------buscador registro de afiliados-------->
-     <div class="container-fluid text-center pt-lg-3" id=""> 
+   <seccion class="container" id="ir-4"> <!----------buscador registro de afiliados-------->
+     <div class="container-fluid text-center pt-lg-3"> 
        <h2 class="mb-2">PACIENTES REGISTRADOS</h2>
      </div>
      <div id="contenedorRegistro"></div>
@@ -106,6 +129,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <Script src="JS/simulador.js"> </Script>
   </body>
 </html>

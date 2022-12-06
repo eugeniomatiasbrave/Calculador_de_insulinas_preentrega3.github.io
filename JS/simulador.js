@@ -29,45 +29,31 @@ const insulina1010=new Insulina({id:1010,monodroga:"Insulina Degludec",accion:"H
 const insulina1011=new Insulina({id:1011,monodroga:"Insulina.Lispro+ins.lispro protamina",accion:"Hipoglucemiante",marca:"INSULINA HUMALOG MIX 25 KWIKPEN",presentacion:"100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:42000, laboratorio:"Raffi S.A"});
 const insulina1012=new Insulina({id:1012,monodroga:"Insulina Humana",accion:"Hipoglucemiante",marca:"INSULINA INSULATARD PENFILL",presentacion:"HM 100UI/ml CARTUCHO x5x3ml",potencia:100,unidadesCaja:1500, precio:13000, laboratorio:"Beriham S.A"});
 
+ 
+ const calculador = document.getElementById('calculador').addEventListener('submit', calcularCajas); //llamada a calcular cajas
 
+ function calcularCajas (e){
 
- const unidadesDispensa=(unidades,Dias)=>unidades*Dias;  
- const cajasDispensa=(unidadesDispensa,unidadesCaja)=>unidadesDispensa/unidadesCaja;  // funcion flecha
+  //inputs
+  const inputUnidades= document.getElementById('inputUnidades').value;
+  const inputInsulinas= document.getElementById('inputInsulinas').value;
+  const inputDispensa= document.getElementById('inputDispensa').value;
+  
+  //calculos 
 
-let unidades=prompt('INGRESAR LAS UNIDADES DIA DE INSULINA USADAS POR EL PACIENTE'); // Entrada 1 de formulario
-    if(unidades>6 && unidades<200){
+  const unidadesDispensa = inputUnidades*inputDispensa;
+  const cajasDispensa=unidadesDispensa/inputInsulinas;
 
-      let opcionInsulina=prompt('INGRESAR Nº DE OPCION DE INSULINAS:\n- Nº1 : Para Insulinas en presentaciones de '
-      +insulina1001.potencia+' ui/ml.\n- Nº2 : Para Insulina Toujeo '+insulina1005.potencia+' ui/ml.\n- Nº3 : Para Insulina Humalog '
-      +insulina1008.potencia+' ui/ml.\n- Nº4 : Para Insulina Tresiba '+insulina1010.potencia+' ui/ml)');  // Entrada 2 de formulario
+  //resultado
 
-      let dispensaDias=prompt('INGRESAR TIPO DE DISPENSA, 30 O 90 DIAS'); // Entrada 3 de formulario
-       switch(dispensaDias){
-         case'30':
-         case'90':
-         break;
-         default: alert('ERROR: Opcion incorrecta')}
+  document.getElementById("resultado").innerHTML = 'Corresponden '+ cajasDispensa.toFixed(2)+ ' cajas de insulina. A dispensar:';
+  document.getElementById("resultado-redondo").innerHTML = Math.ceil(cajasDispensa);
+  e.preventDefault();
+  }
 
-       switch(opcionInsulina){
-         case'1':  // casos----//invocacion de la funcion---, uso de metodo para redondear y metodo para enteros.
-           let cajas100=cajasDispensa(unidadesDispensa(unidades,dispensaDias),insulina1001.unidadesCaja)
-           alert('Corresponden '+cajas100.toFixed(2)+' cajas. A dispensar '+Math.ceil(cajas100)+' cajas de insulinas.');break;
-         case'2':
-           let cajas300=cajasDispensa(unidadesDispensa(unidades,dispensaDias),insulina1005.unidadesCaja) 
-           alert('Corresponden '+cajas300.toFixed(2)+' cajas. A dispensar '+Math.ceil(cajas300)+' cajas de insulinas.');break;  
-         case'3':
-           let cajas200H=cajasDispensa(unidadesDispensa(unidades,dispensaDias),insulina1008.unidadesCaja)
-           alert('Corresponden '+cajas200H.toFixed(2)+' cajas. A dispensar '+Math.ceil(cajas200H)+' cajas de insulinas.');break;
-         case'4':
-           let cajas200T=cajasDispensa(unidadesDispensa(unidades,dispensaDias),insulina1010.unidadesCaja)
-           alert('Corresponden '+cajas200T.toFixed(2)+' cajas. A dispensar '+Math.ceil(cajas200T)+' cajas de insulinas.');break; 
-         default:alert('ERROR: Opcion incorrecta');break;}} 
-      
-    else{alert('NO DISPENSAR: La dosis esta fuera de rango. Revisar el empadronamiento del paciente')};
-
-
-
+     
 // ARRAY 2 de OBJETOS + FOREACH + DOM
+
 const ArrayInsulinas=[
 {id:1001,monodroga:"Insulina Humana",accion:"Hipoglucemiante",marca:"INSULINA INSULATARD FLEXPEN",presentacion:"HM 100UI lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:18000, laboratorio:"Raffi S.A", img:"https://cdn.shop-apotheke.com/images/D00/546/578/D00546578-p10.jpg"},
 {id:1002,monodroga:"Insulina Aspartica",accion:"Hipoglucemiante",marca:"INSULINA NOVORAPID FLEXPEN",presentacion:"100UI lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:32000, laboratorio:"Marke S.A", img:"https://cajausa.com/wp-content/uploads/2021/02/novorapid-100-x-5-x-3.jpg"},
@@ -83,7 +69,6 @@ const ArrayInsulinas=[
 {id:1012,monodroga:"Insulina Humana",accion:"Hipoglucemiante",marca:"INSULINA INSULATARD PENFILL",presentacion:"HM 100UI CARTUCHO x5x3ml",potencia:100,unidadesCaja:1500, precio:13000, laboratorio:"Beriham S.A", img:"https://cdn.shopify.com/s/files/1/0580/5257/5405/products/2652_1_f7942911-966c-44a7-a459-288eb3deafa0_800x.jpg?v=1629727346"},
 ];
 
-
 let domMarcas = document.getElementById("domMarcas");
 const listaMarca = ( ArrayInsulinas, domMarcas)=>{
   let acumulados = '';
@@ -95,7 +80,6 @@ const listaMarca = ( ArrayInsulinas, domMarcas)=>{
 
 
 let domVademecum = document.getElementById("domVademecum");
-
 const vade = ( ArrayInsulinas, domVademecum)=>{
   let acumulado = '';
     ArrayInsulinas.forEach(item => {
@@ -122,55 +106,107 @@ const vade = ( ArrayInsulinas, domVademecum)=>{
     vade(ArrayInsulinas,domVademecum)
 
 
-
 //ALTA AFILIADOS
 
-let contenedoraltas = document.getElementById("contenedoraltas");  // DOM de altas
+let formularioaltas = document.getElementById("formularioaltas");  // DOM de altas
+
+// CREATE FORMULARIO
+
 let div = document.createElement("div");
 div.innerHTML= `
- <form class="container-fluid text-center pt-lg-3 mt-2 w-50" id=""> <!-------Formulario altas------------->
-  <h2 class="mb-2">ALTA DE AFILIADOS</h2>  
-  <div class="p-1">
-    <h5>FORMULARIO DE ALTAS</h5>
-    <label for="inputPassword2" class="visually-hidden ">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar credencial">
-  </div>
-  <div class="p-1">
-    <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar DNI">   
-  </div>
-    <div class="p-1">
-    <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar Nombre y Apellido">
-  </div>
-  <div class="p-1">
-    <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Ingresar Obra Social">
-  </div>
-  <button class="btn btn-primary btn-block mb-1 mt-2 w-100 " id="bo" type="reset" value="Reset">Reset</button> 
-  <button class="btn btn-primary btn-block  w-100" id="bo" type="submit">Guardar</button>  
- </form> `;
-contenedoraltas.append(div);
 
+<div class="card border-dark bg-light container text-center" style="max-width: 44rem;">
+ <form class="container-fluid text-center pt-lg-3 mt-1 mb-3" id="">   
+  <h5>ALTA DE AFILIADOS</h5>
+  <input type="number" class="form-control p-1 mt-1" id="inputcredencial" placeholder="Ingresar Credencial">
+  <input type="number" class="form-control p-1 mt-1" id="inputdni" placeholder="Ingresar DNI"> 
+  <input type="text" class="form-control p-1 mt-1" id="inputnombre" placeholder="Ingresar Nombre y Apellido">
+  <select id="inputobrasocial" class="form-select p-1 mt-1"  aria-label="Default select example" required >
+            <option selected>Seleccionar Obra Social:</option>
+            <option value="UPCN">UPCN</option>
+            <option value="OSPEDYC">OSPEDYC</option>
+            <option value="OSMEDYCA">OSMEDYCA</option>
+            <option value="GALENO">GALENO</option>
+          </select> 
+  <button class="btn btn-primary btn-block w-100 mb-1 mt-2" id="bo" type="submit">GUARDAR</button> 
+  <button class="btn btn-primary btn-block w-100" id="bo" type="reset" value="Reset">RESET</button>  
 
-const AltaAfiliados=[
-  {credencial:'1111',dni:'27778988',nombreyapellido:'Brave Eugenio Matias',obrasocial:'Galeno'},
-  {credencial:'1112',dni:'31555666',nombreyapellido:'Martinez Juan',obrasocial:'Union Personal'},
-  {credencial:'1113',dni:'21888111',nombreyapellido:'Susana Rua',obrasocial:'Ospedyc'},
-  ];
+  <div class="card border-dark mt-3 text-center" style="max-width: 43rem;">
+            <div class="card-header">AFILIADOS DADOS DE ALTA</div>
+            <div class="card-body text-dark">
+              <h5 class="card-title m-0"></h5>  
+              <table class="table">
+              <thead class="">
+                <tr class="fs-6 lh-1">
+                  <th scope="col p-0">Credencial</th>
+                  <th scope="col p-0">Dni</th>
+                  <th scope="col p-0">Afiliado</th>
+                  <th scope="col p-0">Prestador</th>
+                </tr>
+              </thead>
+              <tbody id="listaAltas">
+              </tbody>
+            </table>
+          </div>
+ </form>
+ </div>`;
 
-let AltasLista= 'AFILIADOS DADOS DE ALTA: \n'
-AltaAfiliados.push({
-    credencial: prompt('ALTA DE AFILIADOS:\n Ingresar credencial del paciente'),
-    dni:prompt('Ingresar DNI del paciente'),
-    nombreyapellido: prompt('Ingresar Nombre y Apellido del paciente'),
-    obrasocial:prompt('Ingresar Obra Social del paciente')
-});
+formularioaltas.append(div);
 
-for ( const Altas of AltaAfiliados){  
-  AltasLista += '- Credencial: '+ Altas.credencial + ' Dni: ' + Altas.dni + ' Nombre y Apellido: '+ Altas.nombreyapellido + ' Obra Social: ' + Altas.obrasocial + '\n'
+// LLAMADA ALTAS DE AFILIADOS 
+
+formularioaltas.addEventListener('submit', guardarAltas);
+
+function guardarAltas (e){
+
+  //inputs
+  const altadni= document.getElementById('inputdni').value;
+  const altacredencial= document.getElementById('inputcredencial').value;
+  const altanombre= document.getElementById('inputnombre').value;
+  const altaobrasocial= document.getElementById('inputobrasocial').value;
+
+  //funcion y array
+
+  const AltaAfiliados=[
+    {credencial:'1111',dni:'27778988',nombreyapellido:'Brave Eugenio Matias',obrasocial:' GALENO'},
+    {credencial:'1112',dni:'31555666',nombreyapellido:'Martinez Juan',obrasocial:'UPSN'},
+    {credencial:'1113',dni:'21888111',nombreyapellido:'Susana Rua',obrasocial:'OSPEDYC'},
+    ];
+  
+  AltaAfiliados.unshift({
+      credencial:altacredencial,
+      dni: altadni,
+      nombreyapellido: altanombre,
+      obrasocial: altaobrasocial,
+  });
+
+  //ALERTA ALTA AFILIADO 
+  Swal.fire({
+    text: 'AFILIADO DADO DE ALTA',
+    title: AltaAfiliados[0].nombreyapellido,
+    icon: 'success'
+  });   
+
+  //LISTA ALTAS
+  let AltasLista='';
+  for ( const Altas of AltaAfiliados){  
+    AltasLista += `  
+    <tr>
+      <th scope="row">${Altas.credencial}</th>
+      <td>${Altas.dni}</td>
+      <td>${Altas.nombreyapellido}</td>
+      <td>${Altas.obrasocial}</td>
+    </tr>`
+  }
+  
+  document.getElementById("listaAltas").innerHTML = AltasLista;
+  
+  e.preventDefault(); 
 }
-alert(AltasLista)
+
+//const AltaAfiliadosJSON=JSON.stringify(AltaAfiliados)
+ // localStorage.setItem("AltaLista", AltaAfiliadosJSON)
+
 
 
 // REGISTRO DE AFILIADOS

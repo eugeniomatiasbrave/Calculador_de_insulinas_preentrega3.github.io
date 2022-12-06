@@ -30,3 +30,11 @@ html {
     border: none; 
     padding: 7px 5px 7px 5px;   
 }
+
+.num-res {
+    font-size: 5rem;
+    color: #038C73;
+    padding: 0px;
+    margin: 0px;
+    line-height: 70px ;
+}
