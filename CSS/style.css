@@ -1,28 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
+    margin: 0 px;
+    padding: 0 px;
+    border: 0 px;
     box-sizing: border-box;
     vertical-align: baseline;
 }
 
- picture, video, iframe, figure {
-     max-width: 100%;
-     width: 100%;
-     object-fit: cover;
-     object-position: center;
-    }
-
+ 
 html {
     scroll-behavior: smooth;
     }
- body {
-    line-height: 1.4em;
- }   
+
 
 #color {
-    margin-top: 7 px;
-   
+    margin-top: 7 px;  
 }
 
 #bo {
@@ -31,10 +22,22 @@ html {
     padding: 7px 5px 7px 5px;   
 }
 
+
+
+
+
 .num-res {
     font-size: 5rem;
     color: #038C73;
     padding: 0px;
     margin: 0px;
     line-height: 70px ;
+}
+
+.texto1{
+    line-height : 18px;
+    font-size: 1 px;
+    padding: 0px 0px 0px 0px ;
+    margin: 0px 0px 0px 0px;
+
 }
