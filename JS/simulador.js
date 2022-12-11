@@ -54,9 +54,33 @@ const ArrayInsulinas=[
   const inputUnidades= document.getElementById('inputUnidades').value;
   const inputInsulinas= document.getElementById('inputInsulinas').value;
   const inputDispensa= document.getElementById('inputDispensa').value;
-  //calculos 
-  const unidadesDispensa = inputUnidades*inputDispensa;
-  const cajasDispensa=unidadesDispensa/inputInsulinas;
+//calculos 
+const unidadesDispensa = inputUnidades*inputDispensa;
+const cajasDispensa=unidadesDispensa/inputInsulinas;
+
+if(inputUnidades === '' || inputInsulinas=== '' || inputDispensa=== '' ){
+
+  Swal.fire({ 
+    icon: 'error',
+    title:'ERROR', 
+    text: 'Ingresar campos',
+    backdrop: true,
+    confirmButtonText: 'VOLVER',
+    confirmButtonColor:'#038C73',
+    })
+} else if (inputInsulinas<=6 || inputInsulinas>=200) {
+
+  Swal.fire({ 
+    icon: 'warning',
+    title:'UI dia FUERA DE RANGO', 
+    text: 'No dispensar, consultar a Auditoria',
+    backdrop: true,
+    confirmButtonText: 'VOLVER',
+    confirmButtonColor:'#038C73',
+    })
+  
+} else{
+
   //resultado en Alert
   Swal.fire({ 
     icon: 'success',
@@ -66,6 +90,7 @@ const ArrayInsulinas=[
     confirmButtonText: 'VOLVER',
     confirmButtonColor:'#038C73',
     });
+  }
   e.preventDefault();
   }
 
