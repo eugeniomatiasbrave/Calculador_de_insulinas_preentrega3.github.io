@@ -43,17 +43,9 @@ const ArrayInsulinas=[
   {id:1012,monodroga:"Insulina Humana",accion:"Hipoglucemiante",marca:"INSULINA INSULATARD PENFILL",presentacion:"HM 100UI CARTUCHO x5x3ml",potencia:100,unidadesCaja:1500, precio:13000, laboratorio:"Beriham S.A", img:"https://cdn.shopify.com/s/files/1/0580/5257/5405/products/2652_1_f7942911-966c-44a7-a459-288eb3deafa0_800x.jpg?v=1629727346"},
   ];
 
-const AltaAfiliados=[
-  {credencial:'1111',dni:'27778988',nombreyapellido:'Brave Eugenio Matias',obrasocial:' GALENO'},
-  {credencial:'1112',dni:'31555666',nombreyapellido:'Martinez Juan',obrasocial:'UPSN'},
-  {credencial:'1113',dni:'21888111',nombreyapellido:'Susana Rua',obrasocial:'OSPEDYC'},
-  {credencial:'1114',dni:'22444555',nombreyapellido:'Leonel Messi',obrasocial:'GALENO'},
-  {credencial:'1115',dni:'33222777',nombreyapellido:'Enso Fernandez',obrasocial:'OSPEDYC'},
-  {credencial:'1116',dni:'12999333',nombreyapellido:'Julian Alvarez',obrasocial:'GALENO'},
-  {credencial:'1117',dni:'45111000',nombreyapellido:'Lujan Dacruz',obrasocial:'GALENO'},
-  ];
+  
 
-
+  
 
 
  const calculador = document.getElementById('calculador').addEventListener('submit', calcularCajas); //llamada a calcular cajas
@@ -129,20 +121,20 @@ div.innerHTML= `
   <input type="number" class="form-control p-1 mt-1" id="inputcredencial" placeholder="Ingresar Credencial">
   <input type="number" class="form-control p-1 mt-1" id="inputdni" placeholder="Ingresar DNI"> 
   <input type="text" class="form-control p-1 mt-1" id="inputnombre" placeholder="Ingresar Nombre y Apellido">
-  <select id="inputobrasocial" class="form-select p-1 mt-1"  aria-label="Default select example" required >
+        <select id="inputobrasocial" class="form-select p-1 mt-1"  aria-label="Default select example" required >
             <option selected>Seleccionar Obra Social:</option>
             <option value="UPCN">UPCN</option>
             <option value="OSPEDYC">OSPEDYC</option>
             <option value="OSMEDYCA">OSMEDYCA</option>
             <option value="GALENO">GALENO</option>
-          </select> 
-          <div class="d-flex my-1 gap-1">
-  <button class="btn btn-primary btn-block w-100 mb-1 mt-2" id="bo" type="submit">GUARDAR</button> 
-  <button class="btn btn-primary btn-block w-100  mt-2 mb-1" id="bo" type="reset" value="Reset">RESET</button> 
+        </select> 
+  <div class="d-flex my-1 gap-1">
+    <button class="btn btn-primary btn-block w-100 mb-1 mt-2" id="bo" type="submit">GUARDAR</button> 
+    <button class="btn btn-primary btn-block w-100  mt-2 mb-1" id="bo" type="reset" value="Reset">RESET</button> 
   </div> 
   <button type="button" id="bo" class="btn btn-primary px-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  LISTA DE AFILIADOS
-</button>
+     LISTA DE AFILIADOS
+  </button>
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
@@ -150,30 +142,39 @@ div.innerHTML= `
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">AFILIADOS DADOS DE ALTA</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+      </div> <!--de modal-header-->
       <div class="modal-body">
-      <table class="table">
-      <thead class="">
-       <tr class="fs-6 lh-1">
-         <th scope="col p-0">Credencial</th>
-         <th scope="col p-0">Dni</th>
-         <th scope="col p-0">Afiliado</th>
-         <th scope="col p-0">Prestador</th>
-       </tr>
-      </thead>
-      <tbody id="ModalAltas">
-   </tbody>
-</table>
-</div>
+        <table class="table">
+          <thead class="">
+            <tr class="fs-6 lh-1">
+              <th scope="col p-0">Credencial</th>
+              <th scope="col p-0">Dni</th>
+              <th scope="col p-0">Afiliado</th>
+              <th scope="col p-0">Prestador</th>
+            </tr>
+          </thead>
+           <tbody id="ModalAltas"></tbody>
+        </table>
+      </div> <!--de modal-body-->
       <div class="modal-footer">
         <button type="button" id="bo" class="btn btn-secondary px-3" data-bs-dismiss="modal">SALIR</button>
       </div>
-    </div>
-  </div>
- </div>
+    </div> <!--de modal-content-->
+  </div> <!--de modal-dialog-->
+ </div> <!--de modal-fade-->
 </form>
  </div>`;
 formularioaltas.append(div);
+
+
+const AltaAfiliados=[
+
+  {credencial:'1112',dni:'31555666',nombreyapellido:'Martinez Juan',obrasocial:'UPSN'},
+  {credencial:'1113',dni:'21888111',nombreyapellido:'Susana Rua',obrasocial:'OSPEDYC'},
+  {credencial:'1114',dni:'22444555',nombreyapellido:'Leonel Messi',obrasocial:'GALENO'},
+  {credencial:'1115',dni:'33222777',nombreyapellido:'Enso Fernandez',obrasocial:'OSPEDYC'},
+  {credencial:'1116',dni:'12999333',nombreyapellido:'Julian Alvarez',obrasocial:'GALENO'},
+  {credencial:'1117',dni:'45111000',nombreyapellido:'Lujan Dacruz',obrasocial:'GALENO'}]
 
 // LLAMADA ALTAS DE AFILIADOS 
 formularioaltas.addEventListener('submit', guardarAltas);
@@ -185,104 +186,92 @@ function guardarAltas (e){
   const altanombre= document.getElementById('inputnombre').value;
   const altaobrasocial= document.getElementById('inputobrasocial').value;
 
-  //funcion y array
-  AltaAfiliados.unshift({
+  //Metodo de array agregar afiliado en primer lugar de la lista
+AltaAfiliados.unshift({
       credencial:altacredencial,
       dni: altadni,
       nombreyapellido: altanombre,
       obrasocial: altaobrasocial,
   });
 
+
   //ALERTA ALTA AFILIADO 
   Swal.fire({
     text: 'AFILIADO DADO DE ALTA',
     title: AltaAfiliados[0].nombreyapellido,
-    icon: 'success'
+    icon: 'success',
+    confirmButtonText: 'VOLVER',
+    confirmButtonColor:'#038C73',
   });   
 
+  //LISTA ALTAS
+  let AltasLista='';
+  for ( const Altas of AltaAfiliados){  
+    AltasLista += `<tr>
+    <th scope="row">${Altas.credencial}</th>
+    <td>${Altas.dni}</td>
+    <td>${Altas.nombreyapellido}</td>
+    <td>${Altas.obrasocial}</td></tr>`}
+
+    document.getElementById("ModalAltas").innerHTML = AltasLista;
+    
+   
   e.preventDefault(); 
+  
+
+  const AltaAfiliadosJSON=JSON.stringify(AltaAfiliados)
+localStorage.setItem("AltaAfiliados", AltaAfiliadosJSON);
 }
 
 
-//LISTA ALTAS
-let AltasLista='';
-for ( const Altas of AltaAfiliados){  
-  AltasLista += `<tr>
-                   <th scope="row">${Altas.credencial}</th>
-                   <td>${Altas.dni}</td>
-                   <td>${Altas.nombreyapellido}</td>
-                   <td>${Altas.obrasocial}</td>
-                 </tr>`}
-document.getElementById("ModalAltas").innerHTML = AltasLista;
-//const AltaAfiliadosJSON=JSON.stringify(AltaAfiliados)
- // localStorage.setItem("AltaLista", AltaAfiliadosJSON)
 
 
 
-// REGISTRO DE AFILIADOS
-  
+
+
+
+
+
+
+
+ 
+
+
+
+///////////BUSCADOR DE AFILIADOS////////////
+
 let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //DOM de registro
-let reg = document.createElement("div");
-reg.innerHTML= `
-<div class="card border-dark container text-center mb-1 p-0" style="max-width: 44rem;">
-<div class="card-header ">BUSQUEDA DE PACIENTES</div>
- <form class="container-fluid text-center py-lg-2" id=""> 
-    <div class=" d-flex my-1">
-     <input type="number" id="inputBusquedaAfi" class="form-control me-2 "  placeholder="Ingresar Nº de Credencial">
-     <button type="submit" class="btn btn-primary" id="bo" >BUSCAR</button>
-    </div>
-    </form>
-    <div class="p-2">
-    <div id="resultadoBusqueda"></div>
-    </div>
-    </div>
-    </div>`;
+  let reg = document.createElement("div");
+      reg.innerHTML=`
+      <div class="card border-dark container text-center mb-1 p-0" style="max-width: 44rem;">
+       <div class="card-header ">BUSQUEDA DE PACIENTES</div>
+        <form class="container-fluid text-center py-lg-2" id=""> 
+         <div class=" d-flex my-1">
+          <input type="number" id="inputBusquedaAfi" class="form-control me-2 "  placeholder="Ingresar Nº de Credencial">
+          <button type="submit" class="btn btn-primary" id="bo" >BUSCAR</button>
+         </div>
+        </form>
+        <div class="p-2">
+         <div id="resultadoBusqueda"></div>
+        </div>
+       </div>
+      </div>`;
   contenedorBusquedaAfi.append(reg);
 
-  ///////////BUSCADOR DE AFILIADOS////////////
-
   contenedorBusquedaAfi.addEventListener('submit', busquedaAfi); //evento buscar
-  
   function busquedaAfi (e){
-  
-  const inputBusquedaAfi= document.getElementById('inputBusquedaAfi').value; //inputs
-  //Metodo buscar Afi. por credencial
-   let bu =AltaAfiliados.find(Altas=> Altas.credencial === inputBusquedaAfi);
-
-   //resultado de busqueda
- 
-   Swal.fire({ 
-    icon: 'success',
-    title:'Afiliado: ' + bu.nombreyapellido, 
-    html: '<b>Credencial:</b> ' + bu.credencial + '<br><b>DNI:</b> ' + bu.dni+'<br><b>Obra Social:</b> ' + bu.obrasocial,
-    confirmButtonText: 'VOLVER',
-    confirmButtonColor:'#038C73',});
-
-   e.preventDefault();
-   }
-
-  
-
+    const inputBusquedaAfi= document.getElementById('inputBusquedaAfi').value; //inputs
+    let bu =AltaAfiliados.find(Altas=> Altas.credencial === inputBusquedaAfi); //Metodo buscar Afi. por credencial
+       Swal.fire({  //resultado de busqueda Alert
+           icon: 'success',
+           title:'Afiliado: ' + bu.nombreyapellido, 
+           html: '<b>Credencial:</b> ' + bu.credencial + '<br><b>DNI:</b> ' + bu.dni+'<br><b>Obra Social:</b> ' + bu.obrasocial,
+           confirmButtonText: 'VOLVER',
+           confirmButtonColor:'#038C73',});
+    e.preventDefault();
+    }
 
 //-------------PARA MAS ADELANTE-------------
 /// usar un map para editar los afiliados....
 //-------------------------------------------
 
-
-
-//ARRAY 1
-/*
-const marcas=[
-'INSULINA INSULATARD FLEXPEN',
-'INSULINA NOVORAPID FLEXPEN',
-'INSULINA APIDRA SOLOSTAR',
-'INSULINA LANTUS SOLOSTAR',
-'INSULINA TOUJEO',
-'INSULINA LEVEMIR FLEXPEN',
-'INSULINA HUMALOG KWIKPEN',
-'INSULINA HUMALOG KWIKPEN 200',
-'INSULINA TRESIBA FLEXTOUCH',
-'INSULINA TRESIBA FLEXTOUCH 200',
-'INSULINA HUMALOG MIX 25 KWIKPEN',
-'INSULINA INSULATARD PENFILL'];
-*/
