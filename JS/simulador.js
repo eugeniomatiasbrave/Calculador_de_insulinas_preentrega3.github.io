@@ -181,7 +181,7 @@ div.innerHTML= `
         </table>
       </div> <!--de modal-body-->
       <div class="modal-footer">
-        <button type="button" id="bo" class="btn btn-secondary px-3" data-bs-dismiss="modal">SALIR</button>
+        <button type="button" id="bo" class="btn btn-secondary px-3 " data-bs-dismiss="modal">SALIR</button>
       </div>
     </div> <!--de modal-content-->
   </div> <!--de modal-dialog-->
@@ -251,7 +251,7 @@ let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //-
         <form class="container-fluid text-center py-lg-2" id=""  > 
          <div class=" d-flex my-1">
           <input type="number" id="inputBusquedaAfi" class="form-control me-2 "  placeholder="Ingresar Nº de Credencial">
-          <button type="submit" class="btn btn-primary" id="bo" >BUSCAR</button>
+          <button type="submit" class="btn btn-primary px-3" id="bo" >BUSCAR</button>
          </div>
         </form>
         <div class="p-2">
