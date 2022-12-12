@@ -6,25 +6,45 @@
     vertical-align: baseline;
 }
 
+
  
 html {
     scroll-behavior: smooth;
     }
-
+  
+    
+.fuente1{
+    font-family: 'Slackey', cursive;
+}    
+h3, h6{
+    font-family: 'Slackey', cursive;
+}
 
 #color {
     margin-top: 7 px;  
 }
 
 #bo {
-    background-color: #038C73;
+    background-color: rgb(235, 60, 150);
     border: none; 
     padding: 7px 5px 7px 5px;   
 }
 
+#color1{
+    background-color: rgb(80, 50, 145);
+}
 
+#color2{
+    background-color: rgb(45, 190, 205);
+}
 
+#color3{
+    background-color:rgb(235, 60, 150);
+}
 
+#color4{
+    color: rgb(255, 200, 50);
+}
 
 .num-res {
     font-size: 5rem;
