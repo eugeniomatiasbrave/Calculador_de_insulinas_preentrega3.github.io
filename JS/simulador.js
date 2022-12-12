@@ -216,7 +216,6 @@ AltaAfiliados.unshift({
       obrasocial: altaobrasocial,
   });
 
-   
   Swal.fire({        //ALERTA ALTA AFILIADO--------------------------------------------------------Uso de SwetAlert librerias
     text: 'AFILIADO DADO DE ALTA',
     title: AltaAfiliados[0].nombreyapellido,
