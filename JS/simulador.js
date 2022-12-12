@@ -74,6 +74,26 @@ if(inputUnidades === '' || inputInsulinas=== '' || inputDispensa=== ''){
       confirmButtonText: 'VOLVER',
       confirmButtonColor:'rgb(235, 60, 150)',
       }); }
+
+if (inputUnidades>6 && inputUnidades<200){
+        Swal.fire({  //resultado en Alert
+          icon: 'success',
+          title:'Dispensar ' + Math.ceil(cajasDispensa)+ ' Cajas', 
+          text: 'Calculo exacto '+ cajasDispensa.toFixed(2)+ ' cajas de insulinas.',
+          backdrop: true,
+          confirmButtonText: 'VOLVER',
+          confirmButtonColor:'rgb(235, 60, 150)',
+          }); 
+      }else{
+          Swal.fire({ 
+            icon: 'question',
+            title:'UI dia Fuera de Rango', 
+            text: 'No dispensar, Consultar a Auditoria',
+            backdrop: true,
+            confirmButtonText: 'VOLVER',
+            confirmButtonColor:'rgb(235, 60, 150)',
+            })}
+
   e.preventDefault();
      }
 
