@@ -92,7 +92,7 @@ const vade = ( ArrayInsulinas, domVademecum)=>{
   let acumulado = '';
     ArrayInsulinas.forEach(item => {
       acumulado += `
-       <div class="col-md-4 ">
+       <div class="col-md-4 m-0 ">
         <div class="card mt-3 mx-2" style="">
          <img  src="${item.img}" class="card-img-top" >
           <div class="card-body">
@@ -120,7 +120,7 @@ let formularioaltas = document.getElementById("formularioaltas");  //-----------
 let div = document.createElement("div");
 div.innerHTML= `
 <div class="card border-dark container text-center  mb-1 p-0" style="max-width: 44rem; background-color: rgb(80, 50, 145);">
-<div class="card-header" id="color4"><h6>ALTA DE AFILIADOS</h6></div>
+<div class="card-header mt-1" id="color4"><h6>ALTA DE AFILIADOS</h6></div>
  <form class="container-fluid text-center pt-lg-3 mt-1 mb-3" id="">   
   <input type="number" class="form-control p-1 mt-1" id="inputcredencial" placeholder="Ingresar Credencial">
   <input type="number" class="form-control p-1 mt-1" id="inputdni" placeholder="Ingresar DNI"> 

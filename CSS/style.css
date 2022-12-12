@@ -16,7 +16,7 @@ html {
 .fuente1{
     font-family: 'Slackey', cursive;
 }    
-h3, h6{
+h3, h2, h1, h6{
     font-family: 'Slackey', cursive;
 }
 
@@ -44,6 +44,10 @@ h3, h6{
 
 #color4{
     color: rgb(255, 200, 50);
+}
+
+#color5{
+    background-color: rgb(227, 224, 224);
 }
 
 .num-res {
