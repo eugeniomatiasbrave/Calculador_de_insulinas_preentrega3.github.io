@@ -56,24 +56,6 @@ const ArrayInsulinas=[
 const unidadesDispensa = inputUnidades*inputDispensa;
 const cajasDispensa=unidadesDispensa/inputInsulinas;
 
-if(inputUnidades === '' || inputInsulinas=== '' || inputDispensa=== ''){
-  Swal.fire({ 
-    icon: 'error',
-    title:'ERROR', 
-    text: 'Ingresar campos',
-    backdrop: true,
-    confirmButtonText: 'VOLVER',
-    confirmButtonColor:'rgb(235, 60, 150)',
-    })
-  }else{
-    Swal.fire({  //resultado en Alert
-      icon: 'success',
-      title:'Dispensar ' + Math.ceil(cajasDispensa)+ ' Cajas', 
-      text: 'Calculo exacto '+ cajasDispensa.toFixed(2)+ ' cajas de insulinas.',
-      backdrop: true,
-      confirmButtonText: 'VOLVER',
-      confirmButtonColor:'rgb(235, 60, 150)',
-      }); }
 
 if (inputUnidades>6 && inputUnidades<200){
         Swal.fire({  //resultado en Alert
@@ -93,9 +75,12 @@ if (inputUnidades>6 && inputUnidades<200){
             confirmButtonText: 'VOLVER',
             confirmButtonColor:'rgb(235, 60, 150)',
             })}
-
+            
   e.preventDefault();
      }
+
+     //ASINCRONIA........
+     setInterval
 
 let domMarcas = document.getElementById("domMarcas"); // ---------------------------------------------ARRAY 2 de OBJETOS + FOREACH + DOM
 const listaMarca = ( ArrayInsulinas, domMarcas)=>{
@@ -124,7 +109,7 @@ const vade = ( ArrayInsulinas, domVademecum)=>{
           <p class="card-text fst-italic lh-1">Potencia: ${item.potencia}</p>
           <p class="card-text fst-italic lh-1">Unidades en caja: ${item.unidadesCaja}</p>
           <p class="card-text fst-italic lh-1">Cantidad: ${item.laboratorio}</p>
-          <h6 class="card-title lh-1">Precio: $ ${item.precio}</h6>
+          <h6 class="card-title lh-1">Precio: $ ${item.precio.toLocaleString('es',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h6>
         </div>
        </div>
     </div> `;

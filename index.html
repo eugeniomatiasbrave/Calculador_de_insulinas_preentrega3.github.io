@@ -63,9 +63,9 @@
     </section><!--fin titulo calculador-->    
     <form id="calculador" class="card border-dark container-fluid text-center  pt-3 "  style="max-width: 44rem; color:rgb(45, 190, 205); background-color:  rgb(80, 50, 145) ; margin-top: 80px; margin-bottom: 40px;" > <!--Formulario calculador---------DOM-->
         <h6 class="text-center" id="color4">CALCULADOR DE INSULINAS A DISPENSAR</h6>
-          <input type="number" id="inputUnidades" class="form-control p-1 mt-1" placeholder="Ingresar las UI dia que se aplica el paciente" > 
-          <select id="inputInsulinas" class="form-select p-1 mt-1"  aria-label="Default select example">
-            <option selected>Seleccionar Insulina</option>
+          <input type="number" id="inputUnidades" class="form-control p-1 mt-1" placeholder="Ingresar las UI dia que se aplica el paciente" required > 
+          <select id="inputInsulinas" class="form-select p-1 mt-1"  aria-label="Default select example" required>
+            <option value="" >Seleccionar Insulina</option>
             <option value="1500">Insulina Insulatard Flexpen 100 UI/ml</option>
             <option value="1500">Insulina Insulatard Penfill 100 UI/ml</option>
             <option value="1500">Insulina Novorapid Flexpen 100 UI/ml</option>
@@ -79,8 +79,8 @@
             <option value="1800">Insulina Tresiba Flextouch 200 UI/ml</option>
             <option value="1500">Insulina Humalog Mix 25 Kwikpen 100 UI/ml</option> 
           </select>
-          <select id="inputDispensa" class="form-select p-1 mt-1"  aria-label="Default select example" >
-            <option selected>Ingresar el tipo de entrega:</option>
+          <select id="inputDispensa" class="form-select p-1 mt-1"  aria-label="Default select example" required>
+            <option value="">Ingresar el tipo de entrega:</option>
             <option value="30">A 30 dias</option>
             <option value="90">A 90 dias</option>
           </select>
@@ -94,6 +94,8 @@
            <p class="texto1">* La cantidad de cajas dispensadas es mensual o trimestral segun convenio.</p>
         </div>
         </form> <!--fin de formulario calculador-->
+
+        <div></div>
         
    <seccion class="container" > <!------buscador de afiliados---->
     <div id="ir-2"></div>
