@@ -63,3 +63,20 @@ h3, h2, h1, h6{
     margin: 0px 0px 0px 0px;
 
 }
+
+#tiempo{
+    text-align: justify;
+    color: white;
+    background-color:  rgb(62, 38, 113);
+    width: 400px;
+    font-size: 17px;
+    padding-left: 15px;
+    margin: 0px;
+    
+}
+
+#fixed{
+    position: fixed;
+    width: auto;
+    z-index: 1111   
+}
