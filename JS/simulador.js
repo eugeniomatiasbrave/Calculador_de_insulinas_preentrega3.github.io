@@ -1,32 +1,4 @@
 
-//OBJETOs y ARRAYS
-
-class Insulina {
-  constructor(vademecum) {
-    this.id = vademecum.id;
-    this.monodroga = vademecum.monodroga;
-    this.accion = vademecum.accion;
-    this.marca = vademecum.marca;
-    this.presentacion = vademecum.presentacion;
-    this.potencia = vademecum.potencia;
-    this.unidadesCaja = vademecum.unidadesCaja;
-    this.precio = vademecum.precio;
-    this.cantidad=vademecum.laboratorio;
-    this.img=vademecum.img
-  }}
-
-const insulina1001=new Insulina({id:1001,monodroga:"Insulina Humana",accion:"Hipoglucemiante",marca:"INSULINA INSULATARD FLEXPEN",presentacion:"HM 100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:18000, laboratorio:"Raffu S.A"});
-const insulina1002=new Insulina({id:1002,monodroga:"Insulina Aspartica",accion:"Hipoglucemiante",marca:"INSULINA NOVORAPID FLEXPEN",presentacion:"100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:32000, laboratorio:"Marke S.A"});
-const insulina1003=new Insulina({id:1003,monodroga:"Insulina Gluglisina",accion:"Hipoglucemiante",marca:"INSULINA APIDRA SOLOSTAR",presentacion:"100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:38000, laboratorio:"Cassaro S.A"});
-const insulina1004=new Insulina({id:1004,monodroga:"Insulina Glargina",accion:"Hipoglucemiante",marca:"INSULINA LANTUS SOLOSTAR",presentacion:"100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:45000, laboratorio:"Casco S.A"});
-const insulina1005=new Insulina({id:1005,monodroga:"Insulina Glargina",accion:"Hipoglucemiante",marca:"INSULINA TOUJEO",presentacion:"300UI/ml lap.prellx3x1.5ml",potencia:300,unidadesCaja:1350, precio:41000, laboratorio:"Raffi S.A"});
-const insulina1006=new Insulina({id:1006,monodroga:"Insulina Detemir",accion:"Hipoglucemiante",marca:"INSULINA LEVEMIR FLEXPEN",presentacion:"100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:39000, laboratorio:"Beriham S.A"});
-const insulina1007=new Insulina({id:1007,monodroga:"Insulina Lispro",accion:"Hipoglucemiante",marca:"INSULINA HUMALOG KWIKPEN",presentacion:"100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:41000, laboratorio:"Raffi S.A"});
-const insulina1008=new Insulina({id:1008,monodroga:"Insulina Lispro",accion:"Hipoglucemiante",marca:"INSULINA HUMALOG KWIKPEN 200",presentacion:"200UI/ml lap.prellx5x3ml",potencia:200,unidadesCaja:3000, precio:46000, laboratorio:"Marke S.A"});
-const insulina1009=new Insulina({id:1009,monodroga:"Insulina Degludec",accion:"Hipoglucemiante",marca:"INSULINA TRESIBA FLEXTOUCH",presentacion:"100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:41000, laboratorio:"Cassaro S.A"});
-const insulina1010=new Insulina({id:1010,monodroga:"Insulina Degludec",accion:"Hipoglucemiante",marca:"INSULINA TRESIBA FLEXTOUCH 200",presentacion:"200UI/ml lap.prellx3x3ml",potencia:200,unidadesCaja:1800, precio:52000, laboratorio:"Beriham S.A"});
-const insulina1011=new Insulina({id:1011,monodroga:"Insulina.Lispro+ins.lispro protamina",accion:"Hipoglucemiante",marca:"INSULINA HUMALOG MIX 25 KWIKPEN",presentacion:"100UI/ml lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:42000, laboratorio:"Raffi S.A"});
-const insulina1012=new Insulina({id:1012,monodroga:"Insulina Humana",accion:"Hipoglucemiante",marca:"INSULINA INSULATARD PENFILL",presentacion:"HM 100UI/ml CARTUCHO x5x3ml",potencia:100,unidadesCaja:1500, precio:13000, laboratorio:"Beriham S.A"});
 
 const ArrayInsulinas=[
   {id:1001,monodroga:"Insulina Humana",accion:"Hipoglucemiante",marca:"INSULINA INSULATARD FLEXPEN",presentacion:"HM 100UI lap.prellx5x3ml",potencia:100,unidadesCaja:1500, precio:18000, laboratorio:"Raffi S.A", img:"https://cdn.shop-apotheke.com/images/D00/546/578/D00546578-p10.jpg"},
@@ -79,8 +51,7 @@ if (inputUnidades>6 && inputUnidades<200){
   e.preventDefault();
      }
 
-     //ASINCRONIA........
-     setInterval
+     //ASINCRONIA........ setInterval para agregar...mas adelante
 
 let domMarcas = document.getElementById("domMarcas"); // ---------------------------------------------ARRAY 2 de OBJETOS + FOREACH + DOM
 const listaMarca = ( ArrayInsulinas, domMarcas)=>{
@@ -118,116 +89,111 @@ const vade = ( ArrayInsulinas, domVademecum)=>{
     }
     vade(ArrayInsulinas,domVademecum)
 
+
 //ALTA AFILIADOS
-let formularioaltas = document.getElementById("formularioaltas");  //----------------------------------- DOM de altas + create
 
-// CREATE FORMULARIO
-let div = document.createElement("div");
-div.innerHTML= `
-<div class="card border-dark container text-center  mb-1 p-0" style="max-width: 44rem; background-color: rgb(80, 50, 145);">
-<div class="card-header mt-1" id="color4"><h6>ALTA DE AFILIADOS</h6></div>
- <form class="container-fluid text-center pt-lg-3 mt-1 mb-3" id="">   
-  <input type="number" class="form-control p-1 mt-1" id="inputcredencial" placeholder="Ingresar Credencial">
-  <input type="number" class="form-control p-1 mt-1" id="inputdni" placeholder="Ingresar DNI"> 
-  <input type="text" class="form-control p-1 mt-1" id="inputnombre" placeholder="Ingresar Nombre y Apellido">
-        <select id="inputobrasocial" class="form-select p-1 mt-1"  aria-label="Default select example" required >
-            <option selected>Seleccionar Obra Social:</option>
-            <option value="UPCN">UPCN</option>
-            <option value="OSPEDYC">OSPEDYC</option>
-            <option value="OSMEDYCA">OSMEDYCA</option>
-            <option value="GALENO">GALENO</option>
-        </select> 
-  <div class="d-flex my-1 gap-1">
-    <button class="btn btn-primary btn-block w-100 mb-1 mt-2" id="bo" type="submit">GUARDAR</button> 
-    <button class="btn btn-primary btn-block w-100  mt-2 mb-1" id="bo" type="reset" value="Reset">RESET</button> 
-  </div> 
-  <button type="button" id="bo" class="btn btn-primary px-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-     LISTA DE AFILIADOS
-  </button>
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">AFILIADOS DADOS DE ALTA</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div> <!--de modal-header-->
-      <div class="modal-body">
-        <table class="table">
-          <thead class="">
-            <tr class="fs-6 lh-1">
-              <th scope="col p-0">Credencial</th>
-              <th scope="col p-0">Dni</th>
-              <th scope="col p-0">Afiliado</th>
-              <th scope="col p-0">Prestador</th>
-            </tr>
-          </thead>
-           <tbody id="ModalAltas"></tbody>
-        </table>
-      </div> <!--de modal-body-->
-      <div class="modal-footer">
-        <button type="button" id="bo" class="btn btn-secondary px-3 " data-bs-dismiss="modal">SALIR</button>
-      </div>
-    </div> <!--de modal-content-->
-  </div> <!--de modal-dialog-->
- </div> <!--de modal-fade-->
-</form>
- </div>`;
-formularioaltas.append(div);
+const locSge = 'AltaAfiliados';  //---------------------------------------------------  JSON ALTAS---  ////
+let AltaAfiliados= JSON.parse(localStorage.getItem(locSge)) || [];
 
-const AltaAfiliados=[
-  {credencial:'1112',dni:'31555666',nombreyapellido:'Martinez Juan',obrasocial:'UPSN'},
-  {credencial:'1113',dni:'21888111',nombreyapellido:'Susana Rua',obrasocial:'OSPEDYC'},
-  {credencial:'1114',dni:'22444555',nombreyapellido:'Leonel Messi',obrasocial:'GALENO'},
-  {credencial:'1115',dni:'33222777',nombreyapellido:'Enso Fernandez',obrasocial:'OSPEDYC'},
-  {credencial:'1116',dni:'12999333',nombreyapellido:'Julian Alvarez',obrasocial:'GALENO'},
-  {credencial:'1117',dni:'45111000',nombreyapellido:'Lujan Dacruz',obrasocial:'GALENO'}]
 
-// LLAMADA ALTAS DE AFILIADOS 
-formularioaltas.addEventListener('submit', guardarAltas);//---------------------------------------------Evento Altas de afiliados
-function guardarAltas (e){
+const formularioaltas = document.getElementById('formularioaltas');  //----------------------------------- DOM de form altas 
+const Altas = document.getElementById('Altas');  //----------------------------------- DOM de altas 
+const botonAltas= document.getElementById('botonAltas');
+//const botonEliminar=document.getElementById('botonEliminar');
 
-  //inputs
-  const altadni= document.getElementById('inputdni').value;
-  const altacredencial= document.getElementById('inputcredencial').value;
-  const altanombre= document.getElementById('inputnombre').value;
-  const altaobrasocial= document.getElementById('inputobrasocial').value;
+class AltaAfiliado {
+   static id= 1;
+constructor ( id, credencial , dni , nombreyapellido , obrasocial){
+    this.id=id;
+    this.credencial=credencial;
+    this.dni=dni;
+    this.nombreyapellido=nombreyapellido;
+    this.obrasocial=obrasocial;   
+}}
 
-  //Metodo de array agregar afiliado en primer lugar de la lista
-AltaAfiliados.unshift({
-      credencial:altacredencial,
-      dni: altadni,
-      nombreyapellido: altanombre,
-      obrasocial: altaobrasocial,
-  });
+const sumaId=()=>{
+    let id=1;
+    while(AltaAfiliados.some( AltaAfiliado => AltaAfiliado.id === id)){
+       id++ }
+       return id; }
 
-  Swal.fire({        //ALERTA ALTA AFILIADO--------------------------------------------------------Uso de SwetAlert librerias
-    text: 'AFILIADO DADO DE ALTA',
-    title: AltaAfiliados[0].nombreyapellido,
+const eventoGuardar = (e) => {   //----------------------------evento para dar de alta a los Afiliados
+  e.preventDefault();
+
+const credencial= document.getElementById('inputcredencial').value;
+const dni= document.getElementById('inputdni').value;
+const nombreyapellido= document.getElementById('inputnombre').value;
+const obrasocial= document.getElementById('inputobrasocial').value;
+
+const nuevaAlta= new AltaAfiliado ( sumaId(), credencial, dni, nombreyapellido, obrasocial);  // Guardo nuevo afi. en array y en storage
+    AltaAfiliados.push(nuevaAlta); 
+    localStorage.setItem(locSge, JSON.stringify(AltaAfiliados));
+    
+Swal.fire({        //ALERTA ALTA AFILIADO--------------------------------------------------------Uso de SwetAlert librerias
     icon: 'success',
+    title: 'ALTA GUARDADA CON EXITO',
+    html: `<p> <strong>Afiliado:</strong> ${nuevaAlta.nombreyapellido} </p> 
+     <p><strong> Dni:</strong> ${nuevaAlta.dni} </p>`,
     confirmButtonText: 'VOLVER',
     confirmButtonColor:'rgb(235, 60, 150)',
-  });   
+    });   
+    }
 
-  //LISTA ALTAS
+const mostrarAltas=()=> {  //-----mostrar altas con foreach
   let AltasLista='';
-  for ( const Altas of AltaAfiliados){  
-    AltasLista += `<tr>
-    <th scope="row">${Altas.credencial}</th>
-    <td>${Altas.dni}</td>
-    <td>${Altas.nombreyapellido}</td>
-    <td>${Altas.obrasocial}</td></tr>`}
+    AltaAfiliados.forEach ( AltaAfiliado => {
+      AltasLista += `
+      <div class="card" style="width: 48rem;">
+          <table class="table">
+          <tr>
+           <th scope="" >${AltaAfiliado.id}</th>
+           <td>${AltaAfiliado.credencial}</td>
+           <td>${AltaAfiliado.dni}</td>
+           <td>${AltaAfiliado.nombreyapellido}</td>
+           <td>${AltaAfiliado.obrasocial}</td>
+           <td> <a onclick="" id="bo" class="btn btn-primary  w-75">Eliminar</a></td>
+          </tr> 
+          </table>
+      </div>`    
+      })  
+      Altas.innerHTML = AltasLista;
+      }
 
-    document.getElementById("ModalAltas").innerHTML = AltasLista;
-    
-  e.preventDefault(); 
+/*
+const recorre= (id)=>{
+let AltaAfiliado= AltaAfiliados.find( tr=> tr.id === id);
+
+  if(!AltaAfiliado){
+   return;
+  }
+
+  botonEliminar.setAttribute('afi', id);
   
-const AltaAfiliadosJSON=JSON.stringify(AltaAfiliados)   //-------------------------------------------------------Uso de localStorage
-localStorage.setItem("AltaAfiliados", AltaAfiliadosJSON);
 }
 
-///////////BUSCADOR DE AFILIADOS////////////
-let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //---------------------------------DOM de registro
+*/
+/*
+function eliminarAfiliado(e){
+
+ let id= parseInt(e.target.setAttribute('afi'));
+
+  if(!id)
+{
+ return;
+
+}
+AltaAfiliados = AltaAfiliados.filter( AltaAfiliado=> AltaAfiliado.id  ===id)
+
+localStorage.setItem(locSge, JSON.stringify(AltaAfiliados));
+}
+
+*/
+formularioaltas.addEventListener('submit', eventoGuardar);
+botonAltas.addEventListener('click', mostrarAltas);
+//botonEliminar.addEventListener('click', eliminarAfiliado);
+
+
+let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //BUSCADOR DE AFILIADOS/////----------DOM de registro
   let reg = document.createElement("div");
       reg.innerHTML=`
       <div class="card border-dark container text-center mb-1 p-0" style="max-width: 44rem; background-color:  rgb(80, 50, 145);">
@@ -243,32 +209,27 @@ let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //-
         </div>
        </div>
       </div>`;
-  contenedorBusquedaAfi.append(reg);
+      contenedorBusquedaAfi.append(reg);
 
-  contenedorBusquedaAfi.addEventListener('submit', busquedaAfi); //----------------------------------evento buscar
-  function busquedaAfi (e){
-    const inputBusquedaAfi= document.getElementById('inputBusquedaAfi').value; //--------------------inputs
-    let bu =AltaAfiliados.find(Altas=> Altas.credencial === inputBusquedaAfi); //--------------------Metodo buscar Afi. por credencial
+  contenedorBusquedaAfi.addEventListener('submit', busquedaAfi); //----------------------------------evento buscar Afiliado
+    function busquedaAfi (e){
+     const inputBusquedaAfi= document.getElementById('inputBusquedaAfi').value; 
+      let bu =AltaAfiliados.find(Altas=> Altas.credencial === inputBusquedaAfi); //--------------------Metodo buscar Afi. por credencial
        Swal.fire({  //resultado de busqueda Alert
            icon: 'success',
            title:'Afiliado: ' + bu.nombreyapellido, 
            html: '<b>Credencial:</b> ' + bu.credencial + '<br><b>DNI:</b> ' + bu.dni+'<br><b>Obra Social:</b> ' + bu.obrasocial,
            confirmButtonText: 'VOLVER',
            confirmButtonColor:'rgb(235, 60, 150)',});
-    e.preventDefault();
-    }
+           e.preventDefault();
+           }
 
-
-
-    /////////////// API ----del tiempo------//////////////////
-  const temperaturaGrados= document.getElementById('temperatura-grados')
+  const temperaturaGrados= document.getElementById('temperatura-grados') // ----------------------------API FETCH----del tiempo
   const cielotexto= document.getElementById('cielo-texto')
   const ciudad= document.getElementById('ciudad')
   const iconoTiempo= document.getElementById('icono-tiempo')
- 
   const lat= -34.6
   const lon= -58.45
-
   const tiempoUrl= `http://api.openweathermap.org/data/2.5/weather?lat=${-34.6}&lon=${-58.45}&lang=es&appid=a1a89df45f2c69d5e98224a8cf667099&units=metric`
 
   const tiempoApi=()=>{
@@ -278,24 +239,17 @@ let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //-
      console.log(data)
 
     let icono= data.weather[0].icon  /// ICONO DEL CIELO
-    iconoTiempo.innerHTML= `<img src="http://openweathermap.org/img/wn/${icono}@2x.png" height="40" width="40">`;
-   
+     iconoTiempo.innerHTML= `<img src="http://openweathermap.org/img/wn/${icono}@2x.png" height="40" width="40">`;
     let grados= Math.floor(data.main.temp)
-    temperaturaGrados.textContent= `T ${grados} ºC ,`   /// temperatura----
-
+     temperaturaGrados.textContent= `T ${grados} ºC ,`   /// temperatura----
     let cielo= data.weather[0].description  /// estado del cielo----
-    cielotexto.textContent= `${cielo }` 
-
+     cielotexto.textContent= `${cielo }` 
     let ciud= data.name       /// ubicacion------
-    ciudad.innerText= `, ${ciud}, AR.`
-
-    
-   })
+     ciudad.innerText= `, ${ciud}, AR.`
+     })
    .catch( error=>{
     console.log(error)
-   })
-
-  }
+    })}
 
   tiempoApi();
   
