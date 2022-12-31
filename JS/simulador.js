@@ -202,7 +202,7 @@ let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //B
   const iconoTiempo= document.getElementById('icono-tiempo')
   const lat= -34.6
   const lon= -58.45
-  const tiempoUrl= `http://api.openweathermap.org/data/2.5/weather?lat=${-34.6}&lon=${-58.45}&lang=es&appid=a1a89df45f2c69d5e98224a8cf667099&units=metric`
+  const tiempoUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${-34.6}&lon=${-58.45}&lang=es&appid=a1a89df45f2c69d5e98224a8cf667099&units=metric`
 
   const tiempoApi=()=>{
    fetch(tiempoUrl)
@@ -211,7 +211,7 @@ let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //B
      console.log(data)
 
     let icono= data.weather[0].icon  /// ICONO DEL CIELO
-     iconoTiempo.innerHTML= `<img src="http://openweathermap.org/img/wn/${icono}@2x.png" height="40" width="40">`;
+     iconoTiempo.innerHTML= `<img src="https://openweathermap.org/img/wn/${icono}@2x.png" height="40" width="40">`;
     let grados= Math.floor(data.main.temp)
      temperaturaGrados.textContent= `${grados} ºC ,`   /// temperatura----
     let cielo= data.weather[0].description  /// estado del cielo----
