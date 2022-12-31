@@ -78,8 +78,8 @@
             </lu>   
         </div>
     </section><!--fin titulo calculador-->    
-  <form id="calculador" class="card border-dark container-fluid text-center  pt-3 "  style="max-width: 44rem; color:rgb(45, 190, 205); background-color:  rgb(80, 50, 145) ; margin-top: 80px; margin-bottom: 40px;" > <!--Formulario calculador---------DOM-->
-        <h6 class="text-center" id="color4">CALCULADOR DE INSULINAS A DISPENSAR</h6>
+  <form id="calculador" class="card border-dark container-fluid text-center  pt-2 "  style="max-width: 44rem; color:rgb(45, 190, 205); background-color:  rgb(80, 50, 145) ; margin-top: 80px; margin-bottom: 40px;" > <!--Formulario calculador---------DOM-->
+    <div class="card-header" id="color4"><h6 class="text-center" id="color4">CALCULADOR DE INSULINAS A DISPENSAR</h6></div>
           <input type="number" id="inputUnidades" class="form-control p-1 mt-1" placeholder="Ingresar las UI dia que se aplica el paciente" required > 
           <select id="inputInsulinas" class="form-select p-1 mt-1"  aria-label="Default select example" required>
             <option value="" >Seleccionar Insulina</option>
@@ -123,8 +123,8 @@
 
 <div class="container">  <!--formulario Altas de afiliados-->
   <div id="formularioaltas" > <!--------------------------------------------------------DOM-->
-    <div class="card border-dark container text-center  mb-1 p-0" style="max-width: 44rem; background-color: rgb(80, 50, 145);">
-      <div class="card-header mt-1" id="color4"><h6>ALTA DE AFILIADOS</h6></div>
+    <div class="card border-dark container text-center  mb-4 p-0" style="max-width: 44rem; background-color: rgb(80, 50, 145);">
+      <div class="card-header mt-1" id="color4"><h6>CREAR AFILIADOS</h6></div>
         <form class="container-fluid text-center pt-lg-3 mt-1 mb-3" id="">   
           <input type="number" class="form-control p-1 mt-1" id="inputcredencial" placeholder="Ingresar Credencial" required>
           <input type="number" class="form-control p-1 mt-1" id="inputdni" placeholder="Ingresar DNI" required> 
@@ -142,10 +142,20 @@
         </div> 
       </form>
    </div>
-   <div id="botonAltas">
-     <button id="bo" class="btn btn-info px-3">LISTA DE AFILIADOS</button>
-   </div>
-   <div id="Altas"></div>
+
+   <div class="card border-dark container text-center  my-4 p-0" style="max-width: 44rem; background-color: rgb(80, 50, 145);">
+      <div class="card-header mt-1" id="color4"><h6>AFILIADOS CARGADOS</h6></div>
+     <div id="botonAltas"> <!--ALTAS-->
+       <button id="bo" class="btn btn-primary w-25 my-3">Mostrar</button>
+    </div>
+    
+    
+    <div id="Altas" >
+      
+      
+    </div>
+  </div>
+
  </div>
 </div>
 

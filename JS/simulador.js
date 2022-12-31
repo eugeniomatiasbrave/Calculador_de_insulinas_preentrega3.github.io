@@ -99,7 +99,7 @@ let AltaAfiliados= JSON.parse(localStorage.getItem(locSge)) || [];
 const formularioaltas = document.getElementById('formularioaltas');  //----------------------------------- DOM de form altas 
 const Altas = document.getElementById('Altas');  //----------------------------------- DOM de altas 
 const botonAltas= document.getElementById('botonAltas');
-//const botonEliminar=document.getElementById('botonEliminar');
+
 
 class AltaAfiliado {
    static id= 1;
@@ -120,10 +120,12 @@ const sumaId=()=>{
 const eventoGuardar = (e) => {   //----------------------------evento para dar de alta a los Afiliados
   e.preventDefault();
 
+
 const credencial= document.getElementById('inputcredencial').value;
 const dni= document.getElementById('inputdni').value;
 const nombreyapellido= document.getElementById('inputnombre').value;
 const obrasocial= document.getElementById('inputobrasocial').value;
+
 
 const nuevaAlta= new AltaAfiliado ( sumaId(), credencial, dni, nombreyapellido, obrasocial);  // Guardo nuevo afi. en array y en storage
     AltaAfiliados.push(nuevaAlta); 
@@ -143,55 +145,25 @@ const mostrarAltas=()=> {  //-----mostrar altas con foreach
   let AltasLista='';
     AltaAfiliados.forEach ( AltaAfiliado => {
       AltasLista += `
-      <div class="card" style="width: 48rem;">
-          <table class="table">
+      <div class="card my-2 ms-2" style="width: 43rem;">
+          <table class="table-primary">
           <tr>
            <th scope="" >${AltaAfiliado.id}</th>
            <td>${AltaAfiliado.credencial}</td>
            <td>${AltaAfiliado.dni}</td>
            <td>${AltaAfiliado.nombreyapellido}</td>
            <td>${AltaAfiliado.obrasocial}</td>
-           <td> <a onclick="" id="bo" class="btn btn-primary  w-75">Eliminar</a></td>
           </tr> 
-          </table>
+          </table>   
       </div>`    
       })  
       Altas.innerHTML = AltasLista;
       }
+      localStorage.setItem(locSge, JSON.stringify(AltaAfiliados));
 
-/*
-const recorre= (id)=>{
-let AltaAfiliado= AltaAfiliados.find( tr=> tr.id === id);
 
-  if(!AltaAfiliado){
-   return;
-  }
-
-  botonEliminar.setAttribute('afi', id);
-  
-}
-
-*/
-/*
-function eliminarAfiliado(e){
-
- let id= parseInt(e.target.setAttribute('afi'));
-
-  if(!id)
-{
- return;
-
-}
-AltaAfiliados = AltaAfiliados.filter( AltaAfiliado=> AltaAfiliado.id  ===id)
-
-localStorage.setItem(locSge, JSON.stringify(AltaAfiliados));
-}
-
-*/
 formularioaltas.addEventListener('submit', eventoGuardar);
 botonAltas.addEventListener('click', mostrarAltas);
-//botonEliminar.addEventListener('click', eliminarAfiliado);
-
 
 let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //BUSCADOR DE AFILIADOS/////----------DOM de registro
   let reg = document.createElement("div");
@@ -241,9 +213,9 @@ let contenedorBusquedaAfi = document.getElementById("contenedorBusquedaAfi") //B
     let icono= data.weather[0].icon  /// ICONO DEL CIELO
      iconoTiempo.innerHTML= `<img src="http://openweathermap.org/img/wn/${icono}@2x.png" height="40" width="40">`;
     let grados= Math.floor(data.main.temp)
-     temperaturaGrados.textContent= `T ${grados} ºC ,`   /// temperatura----
+     temperaturaGrados.textContent= `${grados} ºC ,`   /// temperatura----
     let cielo= data.weather[0].description  /// estado del cielo----
-     cielotexto.textContent= `${cielo }` 
+     cielotexto.textContent= `${cielo}` 
     let ciud= data.name       /// ubicacion------
      ciudad.innerText= `, ${ciud}, AR.`
      })
